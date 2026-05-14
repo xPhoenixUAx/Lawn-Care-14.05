@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Verdant Yard Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,850&family=Inter:wght@500;650;750;850&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bundle.css">
+</head>
+<body class="contact-page">
+  <header class="site-header header--solid">
+      <div class="header__inner">
+        <a class="brand" href="index.html"><span class="brand__mark">VY</span><span data-company-name></span></a>
+        <nav class="nav" aria-label="Main navigation">
+          <div class="nav__item"><a class="nav__trigger" href="services.html">Services <i data-lucide="chevron-down"></i></a>
+            <div class="nav__dropdown">
+              <a href="mowing-edging.html">Mowing & edging</a>
+              <a href="service-detail.html">Turf Programs</a>
+              <a href="seasonal-cleanup.html">Seasonal cleanup</a>
+            </div>
+          </div>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header__actions">
+          <a class="btn btn--ghost" data-phone-link data-phone-text></a>
+          <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+  <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu__top">
+        <a class="brand" href="index.html"><span class="brand__mark">VY</span><span data-company-name></span></a>
+        <button class="mobile-menu__close" aria-label="Close menu"><span></span><span></span></button>
+      </div>
+      <nav class="mobile-menu__links" aria-label="Mobile navigation">
+        <a href="services.html">Services</a><a href="mowing-edging.html">Mowing</a><a href="service-detail.html">Turf Care</a><a href="seasonal-cleanup.html">Seasonal</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="mobile-menu__meta">
+        <a class="btn btn--light" data-phone-link data-phone-text></a>
+        <span data-disclaimer-short></span>
+      </div>
+    </aside>
+  <main>
+    <section class="contact-hero section"><div class="container"><p class="eyebrow">Contact</p><h1>Send the lawn request with photos, timing, and access notes.</h1><p class="lead">Use the form for mowing, cleanup, turf care, shrub trimming, or yard maintenance coordination. After submission, a confirmation modal will appear.</p></div></section>
+    <section class="section"><div class="container contact-layout">
+      <aside class="contact-methods">
+        <div class="contact-methods__head">
+          <p class="eyebrow">Contact options</p>
+          <h2>Start with the fastest route.</h2>
+          <p>Call for time-sensitive yard requests, or use the form when photos, access notes, and service details matter.</p>
+        </div>
+        <div class="contact-method-list">
+          <a class="contact-method" data-phone-link><span><i data-lucide="phone"></i></span><div><p class="eyebrow">Phone</p><strong data-phone-text></strong></div></a>
+          <a class="contact-method" data-email-link><span><i data-lucide="mail"></i></span><div><p class="eyebrow">Email</p><strong data-email-text></strong></div></a>
+          <div class="contact-method"><span><i data-lucide="clock"></i></span><div><p class="eyebrow">Hours</p><strong data-business-hours></strong></div></div>
+        </div>
+        <div class="contact-service-note">
+          <i data-lucide="map"></i>
+          <p class="eyebrow">Service area</p>
+          <p data-service-area></p>
+        </div>
+      </aside>
+      <form class="contact-form">
+        <div class="contact-form__head"><p class="eyebrow">Request form</p><h2>Tell us what the yard needs.</h2></div>
+        <div class="form-grid">
+          <label class="field">Name<input name="name" autocomplete="name" required></label>
+          <label class="field">Phone<input name="phone" autocomplete="tel" required></label>
+          <label class="field">ZIP code<input name="zip" inputmode="numeric" required></label>
+          <label class="field">Service needed<select name="service"><option>Mowing and edging</option><option>Turf program</option><option>Seasonal cleanup</option><option>Shrub or bed maintenance</option><option>Not sure yet</option></select></label>
+          <label class="field field--wide">Yard notes<textarea name="message" placeholder="Grass height, access, pets, slope, debris, sprinkler heads, preferred timing"></textarea></label>
+        </div>
+        <button class="btn" type="submit" data-cta-primary></button>
+        <p class="muted" data-disclaimer-short></p>
+      </form>
+      <div class="contact-map" aria-label="Service area map">
+        <iframe
+          title="Service area map"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-97.7344%2C30.0928%2C-97.6129%2C30.3527&amp;layer=mapnik"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="contact-map__panel">
+          <p class="eyebrow">Service area map</p>
+          <h2>Coverage map</h2>
+          <p>Exact address, marker, and service boundaries can be connected later. This map is only a live placeholder for the contact layout.</p>
+        </div>
+      </div>
+    </div></section>
+  </main>
+  <div class="form-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="form-modal-title"><div class="form-modal__panel"><p class="eyebrow">Request received</p><h3 id="form-modal-title">Thanks. Your lawn care details are ready for review.</h3><p class="muted">In a live build, this would route to the intake workflow or CRM.</p><button class="btn form-modal__close">Close</button></div></div>
+  <footer class="site-footer" data-site-footer></footer><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script><script src="js/site-config.js"></script><script src="js/main.js"></script>
+</body>
+</html>

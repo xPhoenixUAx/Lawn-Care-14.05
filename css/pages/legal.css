@@ -1,0 +1,17 @@
+.legal-page .site-header { color: var(--ink); background: rgba(247, 244, 237, 0.94); box-shadow: 0 1px 0 var(--line); }
+.legal-hero { padding-top: calc(var(--header-h) + 72px); padding-bottom: 42px; }
+.legal-content {
+  display: grid;
+  gap: 28px;
+  padding-bottom: 90px;
+}
+.legal-block {
+  padding: 28px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+}
+.legal-block h2 {
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  margin-bottom: 12px;
+}
+.legal-block p + p { margin-top: 12px; }
