@@ -4,6 +4,14 @@
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
   function hydrateConfig() {
+    const pageTitle = document.querySelector("title[data-page-title]");
+    if (pageTitle && config.companyName) {
+      const titleText = pageTitle.dataset.pageTitle || pageTitle.textContent.trim();
+      document.title = document.body.classList.contains("home")
+        ? `${config.companyName} | ${titleText}`
+        : `${titleText} | ${config.companyName}`;
+    }
+
     const values = {
       "company-name": config.companyName,
       "phone-text": config.phoneDisplay,
@@ -182,7 +190,10 @@
       document.body.appendChild(actions);
       hydrateConfig();
     }
-    const toggle = () => actions.classList.toggle("is-visible", window.scrollY > 360 && !document.body.classList.contains("menu-open"));
+    const toggle = () => {
+      const cookieVisible = Boolean($(".cookie-banner.is-visible"));
+      actions.classList.toggle("is-visible", window.scrollY > 360 && !document.body.classList.contains("menu-open") && !cookieVisible);
+    };
     toggle();
     window.addEventListener("scroll", toggle, { passive: true });
   }
@@ -246,7 +257,10 @@
     const save = (value) => {
       localStorage.setItem(storageKey, value);
       banner.classList.remove("is-visible");
-      setTimeout(() => banner.remove(), 240);
+      setTimeout(() => {
+        banner.remove();
+        window.dispatchEvent(new Event("scroll"));
+      }, 240);
     };
 
     $("[data-cookie-accept]", banner).addEventListener("click", () => save("accepted"));
