@@ -1,5 +1,5 @@
 .legal-page .site-header { color: var(--ink); background: rgba(247, 244, 237, 0.94); box-shadow: 0 1px 0 var(--line); }
-.legal-hero { padding-top: calc(var(--header-h) + 72px); padding-bottom: 42px; }
+.legal-hero { padding-top: calc(var(--header-h) + 92px); padding-bottom: 42px; }
 .legal-content {
   display: grid;
   gap: 28px;

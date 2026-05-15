@@ -28,6 +28,9 @@
   padding-left: 20px;
   color: var(--ink-soft);
 }
+.service-row .btn {
+  margin-top: 22px;
+}
 @media (max-width: 760px) {
   .service-row { grid-template-columns: 1fr; }
 }

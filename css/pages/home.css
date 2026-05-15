@@ -419,11 +419,29 @@
   }
   .process-layout {
     grid-template-columns: 1fr;
+    gap: 22px;
   }
   .process-intro {
     max-width: none;
   }
+  .leaf-print-section {
+    padding: 44px 0;
+  }
+  .process-intro h2 {
+    font-size: clamp(1.55rem, 9vw, 2.25rem);
+  }
+  .process-layout .process {
+    gap: 0;
+  }
   .process-layout .process__step {
-    min-height: 190px;
+    min-height: 0;
+    padding: 18px;
+  }
+  .process-layout .process__step span {
+    margin-bottom: 10px;
+  }
+  .process-layout .process__step p {
+    font-size: 0.88rem;
+    line-height: 1.45;
   }
 }

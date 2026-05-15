@@ -1,5 +1,5 @@
 .about-hero {
-  padding-top: calc(var(--header-h) + 58px);
+  padding-top: calc(var(--header-h) + 92px);
   padding-bottom: clamp(42px, 6vw, 78px);
   background: linear-gradient(180deg, var(--paper-2), var(--paper));
 }
@@ -16,6 +16,9 @@
 }
 .about-page .section {
   padding: clamp(50px, 6vw, 86px) 0;
+}
+.about-page .about-hero {
+  padding-top: calc(var(--header-h) + 92px);
 }
 .about-hero__grid,
 .about-summary__grid,
@@ -133,6 +136,7 @@
 }
 .testimonial-card {
   flex: 0 0 calc((100% - 32px) / 3);
+  min-width: 0;
   display: grid;
   align-content: space-between;
   min-height: 230px;
@@ -197,7 +201,7 @@
     display: flex;
   }
   .testimonial-card {
-    flex-basis: 100%;
+    flex: 0 0 100%;
   }
   .testimonial-swiper__controls {
     justify-content: flex-start;

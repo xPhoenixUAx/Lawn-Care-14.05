@@ -69,6 +69,7 @@
             <a href="cookie.html">Cookies</a>
           </div>
           <p>Company ID: <span data-company-id></span>. &copy; <span data-current-year></span> <span data-company-name></span>. <span data-footer-copyright>${config.copyrightLine || ""}</span></p>
+          <p class="footer__disclaimer-full"><strong>Disclaimer:</strong> <span data-disclaimer-full></span></p>
         </div>
       </div>
     `;
@@ -173,8 +174,14 @@
   }
 
   function initMobileActions() {
-    const actions = $(".mobile-actions");
-    if (!actions) return;
+    let actions = $(".mobile-actions");
+    if (!actions) {
+      actions = document.createElement("div");
+      actions.className = "mobile-actions";
+      actions.innerHTML = '<a class="btn" data-phone-link>Call</a><a class="btn btn--light" href="contact.html">Quote</a>';
+      document.body.appendChild(actions);
+      hydrateConfig();
+    }
     const toggle = () => actions.classList.toggle("is-visible", window.scrollY > 360 && !document.body.classList.contains("menu-open"));
     toggle();
     window.addEventListener("scroll", toggle, { passive: true });
@@ -194,8 +201,8 @@
     const maxIndex = () => Math.max(0, cards.length - visibleCount());
     const update = () => {
       index = Math.min(Math.max(index, 0), maxIndex());
-      const step = cards[0].getBoundingClientRect().width + 16;
-      track.style.transform = `translateX(${-index * step}px)`;
+      const offset = cards[index] ? cards[index].offsetLeft : 0;
+      track.style.transform = `translateX(${-offset}px)`;
       prev.disabled = false;
       next.disabled = false;
     };
@@ -214,6 +221,38 @@
     update();
   }
 
+  function initCookieBanner() {
+    const storageKey = "verdant_cookie_choice";
+    if (localStorage.getItem(storageKey)) return;
+
+    const banner = document.createElement("div");
+    banner.className = "cookie-banner";
+    banner.setAttribute("role", "region");
+    banner.setAttribute("aria-label", "Cookie notice");
+    banner.innerHTML = `
+      <div class="cookie-banner__copy">
+        <p class="eyebrow">Cookie notice</p>
+        <p>We use cookies and similar technologies to support forms, analytics, maps, and website performance. You can accept or decline non-essential cookies.</p>
+      </div>
+      <div class="cookie-banner__actions">
+        <a href="cookie.html">Cookie Policy</a>
+        <button class="btn btn--ghost" type="button" data-cookie-decline>Decline</button>
+        <button class="btn" type="button" data-cookie-accept>Accept</button>
+      </div>
+    `;
+    document.body.appendChild(banner);
+    requestAnimationFrame(() => banner.classList.add("is-visible"));
+
+    const save = (value) => {
+      localStorage.setItem(storageKey, value);
+      banner.classList.remove("is-visible");
+      setTimeout(() => banner.remove(), 240);
+    };
+
+    $("[data-cookie-accept]", banner).addEventListener("click", () => save("accepted"));
+    $("[data-cookie-decline]", banner).addEventListener("click", () => save("declined"));
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     buildFooter();
     hydrateConfig();
@@ -224,5 +263,6 @@
     initContactForm();
     initMobileActions();
     initTestimonialSwiper();
+    initCookieBanner();
   });
 })();

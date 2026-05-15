@@ -1,5 +1,5 @@
 .contact-hero {
-  padding-top: calc(var(--header-h) + 58px);
+  padding-top: calc(var(--header-h) + 92px);
   padding-bottom: clamp(42px, 6vw, 78px);
   background: var(--paper-2);
 }
@@ -15,6 +15,9 @@
 }
 .contact-page .section {
   padding: clamp(48px, 6vw, 82px) 0;
+}
+.contact-page .contact-hero {
+  padding-top: calc(var(--header-h) + 92px);
 }
 .contact-hero .lead {
   font-size: clamp(1rem, 1.35vw, 1.16rem);

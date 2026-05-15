@@ -5,6 +5,7 @@
   <title>Contact | Verdant Yard Care</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,850&family=Inter:wght@500;650;750;850&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/common/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/bundle.css">
 </head>
 <body class="contact-page">
@@ -34,7 +35,7 @@
         <button class="mobile-menu__close" aria-label="Close menu"><span></span><span></span></button>
       </div>
       <nav class="mobile-menu__links" aria-label="Mobile navigation">
-        <a href="services.html">Services</a><a href="mowing-edging.html">Mowing</a><a href="service-detail.html">Turf Care</a><a href="seasonal-cleanup.html">Seasonal</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+        <a class="mobile-menu__primary" href="services.html">Services</a><div class="mobile-menu__sub"><a href="mowing-edging.html">Mowing & edging</a><a href="service-detail.html">Turf programs</a><a href="seasonal-cleanup.html">Seasonal cleanup</a></div><a class="mobile-menu__primary" href="about.html">About</a><a class="mobile-menu__primary" href="contact.html">Contact</a>
       </nav>
       <div class="mobile-menu__meta">
         <a class="btn btn--light" data-phone-link data-phone-text></a>
@@ -82,12 +83,12 @@
         <div class="contact-map__panel">
           <p class="eyebrow">Service area map</p>
           <h2>Coverage map</h2>
-          <p>Exact address, marker, and service boundaries can be connected later. This map is only a live placeholder for the contact layout.</p>
+          <p>Use the form to share your ZIP code and service details. Provider availability and coverage are confirmed during request review.</p>
         </div>
       </div>
     </div></section>
   </main>
-  <div class="form-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="form-modal-title"><div class="form-modal__panel"><p class="eyebrow">Request received</p><h3 id="form-modal-title">Thanks. Your lawn care details are ready for review.</h3><p class="muted">In a live build, this would route to the intake workflow or CRM.</p><button class="btn form-modal__close">Close</button></div></div>
+  <div class="form-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="form-modal-title"><div class="form-modal__panel"><p class="eyebrow">Request received</p><h3 id="form-modal-title">Thanks. Your lawn care details are ready for review.</h3><p class="muted">We will review the request details and use them to help clarify the next step.</p><button class="btn form-modal__close">Close</button></div></div>
   <footer class="site-footer" data-site-footer></footer><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script><script src="js/site-config.js"></script><script src="js/main.js"></script>
 </body>
 </html>
